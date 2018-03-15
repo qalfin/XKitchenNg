@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/databinding.js"></script>
+    
+</head>
+<body ng-controller="myController">
+    <h3>{{title}}</h3>
+    <table>
+        <tr>
+            <td>First name : </td>
+            <td> <input type="text" ng-model="employee.firstname"></td>
+        </tr>
+        <tr>
+            <td> Middle Name : </td>
+            <td> <input type="text" ng-model="employee.middlename"></td>
+        </tr>
+        <tr>
+            <td> Last Name : </td>
+            <td> <input type="text" ng-model="employee.lastname"></td>
+        </tr>
+    </table>
+    <br>
+    <table>
+            <tr>
+                <td>First name : </td>
+                <td> {{employee.firstname}}</td>
+            </tr>
+            <tr>
+                <td> Middle Name : </td>
+                <td> {{employee.middlename}}</td>
+    
+            </tr>
+            <tr>
+                <td> Last Name : </td>
+                <td> {{employee.lastname}}</td>
+            </tr>
+            </tr>
+        </table>
+</body>
+</html>
