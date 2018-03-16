@@ -51,7 +51,7 @@ var productModule = angular
                 { 'propName' : 'price', 'value' : $scope.product.price}
             ];
 
-            $http.patch($scope.base_url + "/" + $scope.product._id, editData)
+            $http.patch($scope.base_url + "/" + product._id, editData)
             .then(function(data, status){
                 $http.get($scope.base_url)
                 .then(function(response){

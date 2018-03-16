@@ -55,9 +55,6 @@ var tableModule = angular
         
         }
 
-        //delete
-        $scope.delete = function(table){
-            $http.delete
-        }
+        
     
     })

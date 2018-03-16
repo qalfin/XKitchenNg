@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html ng-app=reservationModule>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>reservation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/reservation.js"></script>
+</head>
+
+<body ng-controller="reservationController">
+    <h3>{{title}}</h3>
+    <form>
+        <fieldset>
+            <table>
+                <tr>
+                    <td>reference</td>
+                    <td>
+                        <input type="text" ng-model="reservation.reference">
+                    </td>
+                </tr>
+                <tr>
+                    <td>guest</td>
+                    <td>
+                        <input type="text" ng-model="reservation.guest">
+                    </td>
+                </tr>
+                <tr>
+                    <td>table</td>
+                    <td>
+                        <select name="tableSelect" id="tableSelect" ng-model="reservation.table">
+                            <option ng-repeat="option in tables" value="{{option._id}}">{{option.code}}</option>
+                        </select>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>waiter</td>
+                    <td>
+                        <select name="userSelect" id="userSelect" ng-model="reservation.user">
+                            <option ng-repeat="option in users" value="{{option._id}}">{{option.nick}}</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="button" value="Add new" ng-click="add()" ng-show="createNew">
+                        <input type="button" value="Update" ng-click="update()" ng-show="!createNew">
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th>reference</th>
+                <th>guest</th>
+                <th>table</th>
+                <th>waiter</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="reservation in reservations">
+                <td>{{reservation.reference}}</td>
+                <td>{{reservation.guest}}</td>
+                <td>{{reservation.table.code}}</td>
+                <td>{{reservation.user.nick}}</td>
+                <td>
+                    <input type="button" value="Edit" ng-click="edit(reservation)">
+                    <input type="button" value="Delete" ng-click="delete(reservation)">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>
