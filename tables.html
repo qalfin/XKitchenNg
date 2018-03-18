@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Tables</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <link rel="stylesheet" type="text/css" href="main.css" />
     <script src="scripts/angular.min.js"></script>
     <script src="scripts/table.js"></script>
 </head>
@@ -34,20 +34,21 @@
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <input type="button" value="Add new" ng-click="add()" ng-show="createNew">
-                        <input type="button" value="Delete" ng-click="delete()" ng-show="!createNew">
+                        <input type="button" id="button" value="Add new" ng-click="add()" ng-show="createNew">
+                        <input type="button" id="button" value="Update" ng-click="update()" ng-show="!createNew">
                     </td>
                 </tr>
             </table>
             </fieldset>
         </form>
     <br>
-    <table>
+    <table id ="tab">
         <thead>
             <tr>
                 <th>Code</th>
-                <th>seat</th>
-                <th>description</th>
+                <th>Seat</th>
+                <th>Description</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -56,8 +57,8 @@
                 <td>{{table.seat}}</td>
                 <td>{{table.description}}</td>  
                 <td>
-                    <input type="button" value="Edit" ng-click="edit(table)">
-                    <input type="button" value="Delete" ng-click="delete(table)">
+                    <input type="button" id="button" value="Edit" ng-click="edit(table)">
+                    <input type="button" id="button1" value="Delete" ng-click="delete(table)">
                 </td>              
             </tr>
         </tbody>

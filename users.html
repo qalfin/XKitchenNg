@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Users</title>
+    <title>user</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <link rel="stylesheet" type="text/css" href="main.css"/>
     <script src="scripts/angular.min.js"></script>
     <script src="scripts/user.js"></script>
 </head>
@@ -46,14 +46,15 @@
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <input type="button" value="Add New" ng-click="add()" ng-show="createNew">
-                        <input type="button" value="Update" ng-click="update()" ng-show="!createNew">
+                        <input type="button" id="button" value="Add New" ng-click="add()" ng-show="createNew">
+                        <input type="button" id="button" value="Update" ng-click="update()" ng-show="!createNew">
                     </td>
                 </tr>
             </table>
         </fieldset>
     </form>
-    <table>
+    <br>
+    <table id="tab">
         <thead>
             <tr>
                 <th>No.</th>
@@ -62,6 +63,7 @@
                 <th>badgeid</th>
                 <th>nick</th>
                 <th>fullname</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -73,8 +75,8 @@
                 <td>{{user.nick}}</td>
                 <td>{{user.fullName}}</td>
                 <td>
-                    <input type="button" value="Edit" ng-click="edit(user)">
-                    <input type="button" value="Delete" ng-click="delete(user)">
+                    <input type="button" id="button" value="Edit" ng-click="edit(user)">
+                    <input type="button" id="button1" value="Delete" ng-click="delete(user)">
                 </td>
             </tr>
         </tbody>

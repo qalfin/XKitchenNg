@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Products</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="scripts/angular.min.js"></script>
     <script src="scripts/product.js"></script>
     
@@ -59,22 +59,24 @@
                  </tr>
                  <tr>
                      <td colspan="2">
-                         <input type="button" value="Add new" ng-click="add()" ng-show="createNew">
-                         <input type="button" value="Delete" ng-click="delete()" ng-show="!createNew">
+                         <input type="button" id="button" value="Add new" ng-click="add()" ng-show="createNew">
+                         <input type="button" id="button" value="Update" ng-click="update()" ng-show="!createNew">
                      </td>
                  </tr>
             </table>
         </fieldset>
     </form>
-    <table>
+    <br>
+    <table id="tab">
         <thead>
             <tr>
-                <th>category</th>
-                <th>code</th>
+                <th>Category</th>
+                <th>Code</th>
                 <th>Initial</th>
-                <th>name</th>
-                <th>description</th>
-                <th>price</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -86,8 +88,8 @@
                 <td>{{product.description}}</td>
                 <td>{{product.price}}</td>
                 <td>
-                    <input type="button" value="Edit" ng-click="edit(product)">
-                    <input type="button" value="Delete" ng-click="delete(product)">
+                    <input type="button" id="button" value="Edit" ng-click="edit(product)">
+                    <input type="button" id="button1" value="Delete" ng-click="delete(product)">
                 </td>
             </tr>
         </tbody>

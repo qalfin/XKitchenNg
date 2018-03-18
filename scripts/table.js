@@ -43,18 +43,28 @@ var tableModule = angular
             { 'propName': 'description', 'value' : $scope.table.description}
             ];
 
-        $http.patch($scope.base_url + "/" + table._id, editData)
+        $http.patch($scope.base_url + "/" + $scope.table._id, editData)
         .then(function(data, status){
             $http.get($scope.base_url)
             .then(function(response){
                 $scope.tables = response.data;
                 $scope.createNew = true;
-
+                $scope.table = null;
+             })
         })
-            })
         
-        }
+ }
 
-        
-    
-    })
+ //delete
+    $scope.delete = function(table){
+        $http.delete($scope.base_url + "/" + table._id)
+        .then(function($data, status){
+            $http.get($scope.base_url)
+            .then(function(response){
+                $scope.tables = response.data;
+                $scope.createNew = true;
+                $scope.table = null;
+            });
+        });
+    }
+ });
